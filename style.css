@@ -36,6 +36,12 @@ header .tagline {
 /* Navigation */
 nav {
     background: #34495e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #34495e;
+    z-index: 1000;
 }
 
 nav ul {
@@ -72,6 +78,15 @@ section h2 {
     margin-bottom: 20px;
     font-size: 1.5rem;
 }
+
+section:hover {
+    background: #fdfdfd;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
 
 /* Skills */
 .skills-list {
@@ -124,4 +139,74 @@ footer {
     color: #fff;
     padding: 20px 0;
     margin-top: 40px;
+}
+
+.rotatingContainer {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 40px;
+    height: 40vh;
+    box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+.rotatingContainer::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.wrapper{
+    position: relative;        /* 🔹 crucial: anchors the arrows */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 300px;
+    box-sizing: border-box;
+}
+.card {
+    flex: 0 0 300px;
+    height: 200px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* transition: transform 0.4s ease, box-shadow 0.4s ease; */
+}
+
+/* Rotation effect when hovered */
+.card:hover {
+    transform: rotateY(10deg) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Arrow buttons */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.arrow:hover {
+    background: #1a252f;
+}
+
+/* .arrow.left {
+    left: 10%; 
+} */
+
+.arrow.right {
+    right: 0%;
 }
