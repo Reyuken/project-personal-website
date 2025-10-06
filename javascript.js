@@ -68,9 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".navLinks");
 
-hamburger.addEventListener("click", () => {
+// Toggle menu open/close
+hamburger.addEventListener("click", (e) => {
+  e.stopPropagation(); // Prevent bubbling to document
   hamburger.classList.toggle("active");
   navLinks.classList.toggle("active");
+});
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  const isClickInside =
+    navLinks.contains(e.target) || hamburger.contains(e.target);
+  if (!isClickInside) {
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("active");
+  }
 });
 
 
