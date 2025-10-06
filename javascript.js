@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://reyuken.github.io/project-sign-up-form/",
     "https://reyuken.github.io/project-restaurant-page/",
     "https://reyuken.github.io/project-weather-app/",
+    "https://reyuken.github.io/project-library/",
   ];
 
   websites.forEach(url => {
