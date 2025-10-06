@@ -34,38 +34,92 @@ header .tagline {
 }
 
 /* Navigation */
-nav {
+/* Navbar Base */
+nav.navbar {
     background: #34495e;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #34495e;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
     z-index: 1000;
 }
 
-nav ul {
+/* Navigation links */
+.navLinks {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
+    gap: 30px;
 }
 
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    display: block;
-    padding: 15px 20px;
-    color: #fff;
+.navLinks li a {
+    color: white;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    background: #2c3e50;
+.navLinks li a:hover {
+    color: #1abc9c;
 }
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navLinks {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        flex-direction: column;
+        background: #34495e;
+        width: 200px;
+        height: calc(100vh - 60px);
+        padding: 20px;
+        gap: 20px;
+        transition: right 0.4s ease;
+    }
+
+    .navLinks.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hamburger animation when active */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
 
 /* Sections */
 section {
@@ -150,21 +204,27 @@ footer {
     padding: 40px;
     height: 50vh;
     box-sizing: border-box;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-}
-.rotatingContainer::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
 }
 
-.wrapper{
-    position: relative;        /* 🔹 crucial: anchors the arrows */
+.rotatingContainer::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+.wrapper {
+    position: relative;
+    /* 🔹 crucial: anchors the arrows */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     height: 300px;
     box-sizing: border-box;
 }
+
 .card {
     position: relative;
     flex: 0 0 300px;
@@ -174,7 +234,7 @@ footer {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    scroll-snap-align: center; 
+    scroll-snap-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -190,18 +250,18 @@ footer {
 }
 
 .card img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
-.card a{
+.card a {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.card p{
+.card p {
     position: absolute;
     display: none;
     bottom: 8px;
@@ -213,8 +273,8 @@ footer {
     border-radius: 6px;
 }
 
-.card:hover p{
-    display:block;
+.card:hover p {
+    display: block;
 }
 
 /* Arrow buttons */

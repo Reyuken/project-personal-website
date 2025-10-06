@@ -64,4 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentIndex >= totalCards) currentIndex = 0; // wrap to first card
     scrollToCard(currentIndex);
   });
+
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".navLinks");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navLinks.classList.toggle("active");
+});
+
+
 });
