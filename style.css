@@ -69,6 +69,7 @@ nav ul li a:hover {
 
 /* Sections */
 section {
+    scroll-margin-top: 80px;
     margin: 40px 0;
 }
 
