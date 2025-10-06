@@ -7,6 +7,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardWidth = 320; // card width + gap
   const totalCards = cards.length;
 
+  const websites = [
+    "https://reyuken.github.io/project-calculator/",
+    "https://reyuken.github.io/project-calculator/",
+  ];
+
+  websites.forEach(url => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <a href="${url}" target="_blank">
+        <img src="https://image.thum.io/get/${url}" alt="Website preview">
+        <p>${url.replace(/^https?:\/\//, '')}</p>
+      </a>
+    `;
+
+    container.appendChild(card);
+  });
+
+
+  
   // 🔹 Rotate effect while scrolling
   container.addEventListener("scroll", () => {
     cards.forEach(card => {
