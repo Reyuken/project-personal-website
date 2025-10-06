@@ -9,7 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const websites = [
     "https://reyuken.github.io/project-calculator/",
-    "https://reyuken.github.io/project-calculator/",
+    "https://reyuken.github.io/project-etch-a-sketch/",
+    "https://reyuken.github.io/project-tic-tac-toe/",
+    "https://reyuken.github.io/project-admin-dashboard/",
+    "https://reyuken.github.io/project-sign-up-form/",
+    "https://reyuken.github.io/project-restaurant-page/",
+    "https://reyuken.github.io/project-weather-app/",
   ];
 
   websites.forEach(url => {
