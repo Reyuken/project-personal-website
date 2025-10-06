@@ -35,7 +35,6 @@ header .tagline {
 }
 
 /* Navigation */
-/* Navbar Base */
 nav.navbar {
     background: #34495e;
     position: fixed;
@@ -44,7 +43,7 @@ nav.navbar {
     width: 100%;
     padding: 15px 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     color: white;
     z-index: 1000;
@@ -70,6 +69,8 @@ nav.navbar {
 
 /* Hamburger menu */
 .hamburger {
+    position: absolute;
+    left: 20px;
     display: none;
     flex-direction: column;
     gap: 6px;
