@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".rotatingContainer");
-  const cards = document.querySelectorAll(".card");
   const btnLeft = document.querySelector(".arrow.left");
   const btnRight = document.querySelector(".arrow.right");
-
   const cardWidth = 320; // card width + gap
-  const totalCards = cards.length;
 
   const websites = [
     "https://reyuken.github.io/project-calculator/",
@@ -30,7 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.appendChild(card);
   });
-
+  
+  const cards = document.querySelectorAll(".card");
+  const totalCards = cards.length;
 
   
   // 🔹 Rotate effect while scrolling
