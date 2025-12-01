@@ -90,6 +90,9 @@ function ensureOverlay() {
     overlay.id = "maintenanceNote";
     overlay.innerHTML = `<h1>🚧 Site Under Maintenance</h1>`;
     document.body.appendChild(overlay);
+    console.log("Maintenance overlay added"); // ✅ log when overlay is created
+  } else {
+    console.log("Overlay already exists"); // optional: log when it already exists
   }
 }
 
