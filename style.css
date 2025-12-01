@@ -305,3 +305,16 @@ footer {
 .arrow.right {
     right: 0%;
 }
+
+#maintenanceNote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    color: black;
+    z-index: 9999999;
+    isolation: isolate;
+    backdrop-filter: blur(20px);
+}

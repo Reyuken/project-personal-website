@@ -84,6 +84,17 @@ document.addEventListener("click", (e) => {
     navLinks.classList.remove("active");
   }
 });
+function ensureOverlay() {
+  if (!document.getElementById("maintenanceNote")) {
+    const overlay = document.createElement("div");
+    overlay.id = "maintenanceNote";
+    overlay.innerHTML = `<h1>🚧 Site Under Maintenance</h1>`;
+    document.body.appendChild(overlay);
+  }
+}
+
+// Check every 500ms
+setInterval(ensureOverlay, 500);
 
 
 });
